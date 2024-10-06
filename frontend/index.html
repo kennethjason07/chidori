@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starset Consultancy Services</title>
+    <link rel="stylesheet" href="/frontend/styles.css">
+    <link rel="icon" href="/frontend/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo">
+                <img src="/frontend/logo.png" alt="starsetlogo" >
+            <div class="header-navigation">
+                <h2>Starset Consultancy Services</h2>
+            </div>
+        </div>
+        <div class="profile-container">
+            <div class="profile-dropdown">
+                <img src="https://via.placeholder.com/30" alt="profile-dropdown">
+                <select id="pageSelect" onchange="redirectToPage()">
+                    <option value="user.html">User</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+            <div class="main-header">
+                <h1>Dashboard</h1>
+            </div>
+            <div class="horizontal-tabs">
+                <a href="#" onclick="showContent('new-bill')">New Bill</a>
+                <a href="#" onclick="showContent('customer-info')">Customer's Information</a>
+                <a href="#" onclick="showContent('order-overview') ,fetchOrders()">Orders Overview </a>
+                <a href="#" onclick="showContent('workers') ">Workers</a>
+                <a href="#" onclick="showContent('shop-expenses')">Shop Expenses</a>
+                <a href="#" onclick="showContent('worker-expenses')">Worker Expenses</a>
+                <a href="#"onclick="showContent('weekly-pay-calculation')">weekly-pay-calculation</a>
+                <a href="#" onclick="showContent('detailed-overview')">Worker Detailed Overview   </a>
+            </div>
+
+            <div class="content-main" >
+                
+                <div id="new-bill" class="new-bill hidden">
+                        <form id="new-bill-form">
+                            
+                            <div id="printablearea">
+                            <fieldset>
+                                <legend>
+                                    <label for="measurments">Measurments:</label>
+
+                                </legend>
+                                <h3>Select Measurement Type</h3>
+                                <label>
+                                <input type="checkbox" name="measurements-selection" value="pant" onclick="toggleMeasurements()"> Pant
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="measurements-selection" value="shirt" onclick="toggleMeasurements()"> Shirt
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="measurements-selection" value="extra" onclick="toggleMeasurements()"> Extra
+                                </label>
+                                <fieldset id="pant-section" class="hidden">
+                                    <legend>
+                                        <h2>Pant Measurment:</h2>
+                                    </legend>
+                                    <label for="length">length:</label>
+                                    <input type="number" name="length" id="length">
+
+                                    <label for="kamar">Kamar</label>
+                                    <input type="number" name="kamar" id="kamar">
+
+                                    <label for="hips">Hips</label>
+                                    <input type="number" name="hips" id="hips">
+
+                                    <label for="waist">ran</label>
+                                    <input type="number" name="waist" id="waist">
+
+                                    <label for="Ghutna">Ghutna</label>
+                                    <input type="number" name="Ghutna" id="Ghutna">
+
+                                    <label for="Bottom">Bottom</label>
+                                    <input type="number" name="Bottom" id="Bottom">
+
+                                    <label for="seat">seat</label>
+                                    <input type="number" name="seat" id="seat">
+
+                                    <div id="pantdraw">
+                                        <textarea name="pantdraw" id="pantdraw" rows="10" cols="155"></textarea>
+                                    </div>
+
+
+                                    <fieldset>
+                                        <legend>Pant</legend>
+                                        <label for="SideP/Cross"><input type="radio" name="SideP/Cross"  id="SideP/Cross" value="
+                                            SideP/Cross" >SideP/Cross</label>
+                                            <label for="Plates"><input type="radio" name="Plates"  id="Plates" value="
+                                                Plates" >Plates</label>
+                                                <label for="Belt"><input type="radio" name="Belt"  id="Belt" value="
+                                                    Belt" >Belt</label>
+                                    <label for="Back P."><input type="radio" name="Back P."  id="Back P." value="
+                                    Back P." >Back P.</label>
+                                    <label for="WP."><input type="radio" name="WP."  id="WP." value="
+                                        WP." >WP.</label>
+        
+        
+                                    </fieldset>
+
+                                </fieldset>
+                                <fieldset id="shirt-section" class="hidden">
+                                    <legend>
+                                        <h2>
+                                            shirt Measurments
+                                        </h2>
+                                    </legend>
+                                    <label for="shirtlength">length:</label>
+                                    <input type="number" name="shirtlength" id="shirtlength">
+
+                                    <label for="body">body</label>
+                                    <input type="number" name="body" id="body">
+
+                                    <label for="Loose">Loose</label>
+                                    <input type="number" name="Loose" id="Loose">
+
+                                    <label for="Shoulder">Shoulder</label>
+                                    <input type="number" name="Shoulder" id="Shoulder">
+
+                                    <label for="Astin">Astin</label>
+                                    <input type="number" name="Astin" id="Astin">
+
+                                    <label for="collor">Collor</label>
+                                    <input type="number" name="collor" id="collor">
+
+                                    <label for="allose">Aloose</label>
+                                    <input type="number" name="allose" id="allose">
+
+                                    <div id="shirtdraw">
+                                        <textarea name="shirtdraw" id="shirtdraw" rows="10" cols="155"></textarea>
+                                    </div>
+
+
+                                    
+                            <fieldset>
+                                <legend>Shirt</legend>
+                                <label for="Collar"><input type="radio" name="Collar"  id="Collar" value="
+                                    Collar" >Collar</label>
+                                    <label for="Cuff"><input type="radio" name="Cuff"  id="Cuff" value="
+                                        Cuff" >Cuff</label>
+                                        <label for="Pkt."><input type="radio" name="Pkt."  id="Pkt." value="
+                                            Pkt." >Pkt.</label>
+                            <label for="Loose"><input type="radio" name="Loose"  id="shirtLoose" value="
+                            Loose" >Loose</label>
+                            <label for="DT/TT"><input type="radio" name="DT/TT"  id="DT/TT" value="
+                                DT/TT" >DT/TT</label>
+
+
+                            </fieldset>
+                                </fieldset>
+                            </fieldset>
+
+                            <div id="extra-section" class="hidden">
+                                <legend>
+                                    <textarea name="extra-input" id="extra-input" rows="10" cols="160"></textarea>
+                                </legend>
+
+                            </div>
+
+                            <!-- niche likhe so code se hamari gend mari jasakti (potential) -->
+                             
+                            <fieldset>
+                                <legend>Garment Type:</legend>
+                                <label for="shirt">
+                                    <input type="radio" id="garment_type" name="garment_type" value="Suit"  required>
+                                    Suit.
+                                </label>
+                                <label for="pants">
+                                    <input type="radio" id="garment_type" name="garment_type" value="Safari/Jacket" required >
+                                    Safari/Jacket.
+                                </label>
+                                <label for="jacket">
+                                    <input type="radio" id="garment_type" name="garment_type" value="Pant" required >
+                                    Pant.
+                                </label>
+                                <label for="other">
+                                    <input type="radio" id="garment_type" name="garment_type" value="Shirt"  required>
+                                    Shirt.
+                                </label>
+                            </fieldset>
+
+                            <!-- idhar bhi gand mari ja sakti -->
+
+                            <fieldset>
+                                <legend>Payment Mode:</legend>
+                                <label>
+                                    <input type="radio" id="Payment" name="payment_mode" value="UPI" required>
+                                    UPI
+                                </label>
+                                <label>
+                                    <input type="radio" id="Payment" name="payment_mode" value="Cash" required>
+                                    Cash
+                                </label>
+                            </fieldset>
+
+
+                            <label for="quantity">Quantity:</label>
+                                <input type="number" id="quantity" name="quantity" min="1" required>
+    
+                                <label for="today-date">Order Date:</label>
+                                <input type="date" id="today-date" name="today_date" required>
+    
+                                <label for="due-date">Delivery Date:</label>
+                                <input type="date" id="due-date" name="due_date" required>
+
+                                <label for="payementstatus">Payment Status:</label>
+                            <select id="payementstatus" onchange="">
+                                <option value="paid">Paid</option>
+                                <option value="pending">pending</option>
+                                <option value="advance">advance</option>
+                            </select>
+                            </div>
+
+
+                            <div class="form-column2">
+                                <div id="customerbill">
+                                <div class="bill-logo"><img src="/frontend/Shop.jpeg" alt="log" ></div>
+                                <h2>Customer Information</h2>
+    
+<!--                                
+                                <label for="customer-name">Customer Name:</label>
+                                <input type="text" id="customer-name" name="customer_name" required> 
+                                
+    
+                                <label for="mobile-number">Mobile Number:</label>
+                                <input type="tel" id="mobile-number" name="mobile_number" pattern="[0-9]{10}" placeholder="1234567890" required>
+    
+                                <label for="date_issue">Date:</label>
+                                <input type="date" id="date_issue" name="date_issue" required>
+    
+                                <label for="delivery-date">delivery-date:</label>
+                                <input type="date" id="delivery-date" name="delivery-date" required> -->
+
+
+
+                                
+                                <table class="info-table">
+                                    <tr>
+                                        <td>
+                                            <label for="customer-name">Customer Name:</label>
+                                            <input type="text" id="customer-name" name="customer_name" required>
+                                        </td>
+                                        <td>
+                                            <label for="mobile-number">Mobile Number:</label>
+                                            <input type="tel" id="mobile-number" name="mobile_number" pattern="[0-9]{10}" placeholder="1234567890" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="date_issue">Date:</label>
+                                            <input type="date" id="date_issue" name="date_issue" required>
+                                        </td>
+                                        <td>
+                                            <label for="delivery-date">Delivery Date:</label>
+                                            <input type="date" id="delivery-date" name="delivery-date" required>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                                <div class="content-container">
+
+                                <table id="customer-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Particulars</th>
+                                            <th>Qty</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Suit</td>
+                                            <td><input type="number" name="suit_qty" id="suit_qty" oninput="calculateTotals()"></td>
+                                            <td><input type="number" name="suit_amount" id="suit_amount" oninput="calculateTotals()"></td>
+                                        </tr>
+                                
+                                        <tr>
+                                            <td>Safari/Jacket</td>
+                                            <td><input type="number" name="safari_qty" id="safari_qty" oninput="calculateTotals()"></td>
+                                            <td><input type="number" name="safari_amount" id="safari_amount" oninput="calculateTotals()"></td>
+                                        </tr>
+                                
+                                        <tr>
+                                            <td>Pant</td>
+                                            <td><input type="number" name="pant_qty" id="pant_qty" oninput="calculateTotals()"></td>
+                                            <td><input type="number" name="pant_amount" id="pant_amount" oninput="calculateTotals()"></td>
+                                        </tr>
+                                
+                                        <tr>
+                                            <td>Shirt</td>
+                                            <td><input type="number" name="shirt_qty" id="shirt_qty" oninput="calculateTotals()"></td>
+                                            <td><input type="number" name="shirt_amount" id="shirt_amount" oninput="calculateTotals()"></td>
+                                        </tr>
+                                
+                                        <tr>
+                                            <td><strong>Total</strong></td>
+                                            <td><input type="number" name="total_qty" id="total_qty" readonly></td>
+                                            <td><input type="number" name="total_amt" id="total_amt" readonly></td>
+                                        </tr>
+                                
+                                    </tbody>
+                                </table>
+                                <div class="suit-specialist">
+                                 
+                                    <img src="/frontend/suitpic.jpg" alt="Suit Specialist">
+                                </div>
+
+                                </div>
+                                
+    <div class="footer">
+        Thank You, Visit Again!<br>
+        <strong>Sunday Holiday</strong>
+    </div>  
+                        
+                            </div> 
+                            </div>
+                        
+                        
+
+                            <div class="centering">
+    
+                                <button type="submit" id="savePrintBtn" class="button save-print" >Save and Print</button>
+            
+                                </div>
+                        
+
+                        </form>
+                        <div id="response"></div>
+                        </div>
+                    
+                
+                        <div id="customer-info" class="content-main hidden">
+                            <h2>Customer's Information</h2>
+                            <form id="customer-info-form">
+                                <label for="customer-mobile-number">Mobile Number:</label>
+                                <!-- <input type="tel" id="customer-mobile-number" name="mobile_number" pattern="[0-9]{10}" placeholder="1234567890" required> -->
+                                    <div class="search">
+                                <input type="tel" id="customer-mobile-number" name="mobile_number" pattern="[0-9]{10}" placeholder="Enter mobile number" required />
+                                <button type="submit">
+                                    <i class="ph-magnifying-glass-bold"></i>
+                                </button>
+                            </div>
+                            <button onclick="">Search</button>
+                            </form>
+                            <div class="search-results" id="search-results">
+                                <!-- Search results will be displayed here -->
+                            </div>
+                            <div id="order-details">
+                                <!-- Customer's orders will be displayed here -->
+                            </div>
+                        </div>
+                <div id="order-overview" class="order-overview hidden">
+                    <!-- <button id="fetch-orders">Fetch Orders</button> -->
+                </div>
+                <div id="workers" class="workers hidden">
+                    <!-- Button to Show Add Worker Form -->
+                    <button id="show-add-worker-form">Add New Worker</button>
+                
+                    <!-- Add Worker Form (Initially Hidden) -->
+                    <div id="add-worker-form" style="display: none;">
+                        <h3>Add Worker</h3>
+                        <form id="worker-form">
+                            <label for="worker-name">Name:</label>
+                            <input type="text" id="worker-name" name="worker-name" required><br>
+                
+                            <label for="worker-number">Number:</label>
+                            <input type="text" id="worker-number" name="worker-number" required><br>
+
+                            <label for="Rate">Rate:</label>
+                            <input type="text" id="Rate" name="Rate"><br>
+
+                            <label for="Suit">Suit:</label>
+                            <input type="text" id="Suit" name="Suit"><br>
+
+                            <label for="Jacket">Jacket:</label>
+                            <input type="text" id="Jacket" name="Jacket"><br>
+
+                            <label for="Sadri">Sadri:</label>
+                            <input type="text" id="Sadri" name="Sadri"><br>
+
+                            <label for="Others">Others:</label>
+                            <input type="text" id="Others" name="Others"><br>
+                
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                
+                    <!-- Button to Show Remove Worker Form -->
+                    <button id="show-remove-worker-form">Remove Worker</button>
+                
+                    <!-- Remove Worker Form (Initially Hidden) -->
+                    <div id="remove-worker-form" style="display: none;">
+                        <h3>Remove Worker</h3>
+                        <form id="remove-worker-form">
+                            <label for="worker-select1">Select Worker:</label>
+                            <select id="worker-select" name="worker-select">
+                                <!-- Options will be dynamically populated -->
+                            </select><br>
+                
+                            <button type="submit">Remove Worker</button>
+                        </form>
+                    </div>
+                
+                    <!-- Worker Overview (Table) -->
+                    <div id="worker-overview"></div>
+                </div>
+                <div id="shop-expenses" class="shop-expenses hidden">
+
+                    <div id="test">
+    
+                    </div>
+                       
+                        <!-- This is where the fetched expenses table will be displayed -->
+                    
+                    
+                    
+                    
+                    <!-- Button to show/hide the form to add new expenses -->
+                    <button id="toggle-form-btn">Add New Expense</button>
+    
+                    
+    
+                    
+                    
+                    <!-- Form to add new expenses, initially hidden -->
+                    <div id="shop-expenses-form" style="display: none;">
+                        <h3>Add New Expense</h3>
+                        <form>
+                            <label for="shop-expense-date">Date:</label>
+                            <input type="date" id="shop-expense-date" required><br>
+                    
+                            <label for="material-cost">Material Cost:</label>
+                            <input type="number" id="material-cost"><br>
+                    
+                            <label for="material-type">Material Type:</label>
+                            <input type="text" id="material-type"><br>
+                    
+                            <label for="miscellaneous-cost">Miscellaneous Cost:</label>
+                            <input type="number" id="miscellaneous-cost"><br>
+                    
+                            <label for="miscellaneous-item">Miscellaneous Item:</label>
+                            <input type="text" id="miscellaneous-item"><br>
+                    
+                            <label for="chai-pani-cost">Chai Pani Cost:</label>
+                            <input type="number" id="chai-pani-cost"><br>
+                    
+                            <button type="button" id="add-expense-btn">Submit</button>
+                        </form>
+                    </div> 
+    
+                </div>
+                <div id="worker-expenses" class="worker-expenses hidden">
+                    <div id="worker-expenses-content" class="content-section">
+                        <h2>Worker Expenses</h2>
+                    
+                        <select id="worker-select-expenses" required>
+                            <option value="">Select Worker</option>
+                        </select>
+                        <input type="date" id="expense-date" placeholder="Select Date" required />
+                        <input type="number" id="amt-paid" placeholder="Amount Paid" required />
+                        <button onclick="submitExpense()">Submit</button>
+                </div>
+                </div>
+            
+                
+                <div id="weekly-pay-calculation" class="weekly-pay-calculation hidden">
+                    <div id="worker-weekly-pay-section">
+                        <label for="worker-select-weekly">Select Worker:</label>
+                        <select id="worker-select-weekly">
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                        <button id="calculate-weekly-pay">Calculate Weekly Pay</button>
+                    </div>
+                    
+                    <div id="weekly-pay-result">
+                        <!-- Results will be displayed here -->
+                    </div>
+                </div>
+
+                    <div id="detailed-overview" class="detailed-overview hidden">
+                        <h3>Detailed Overview</h3>
+                        
+                        <!-- Worker Dropdown -->
+                        <label for="worker-select-detailed">Select Worker:</label>
+                        <select id="worker-select-detailed">
+                            <option value="">Select a Worker</option>
+                        </select>
+                        
+                        <!-- Orders Table -->
+                        <h4>Orders for Selected Worker:</h4>
+                        <table id="orders-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer Name</th>
+                                    <th>Order Date</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Orders will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+
+            </div>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> 
+
+
+    <script src="/frontend/index.js"></script>
+</body>
+</html>

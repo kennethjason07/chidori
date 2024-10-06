@@ -1,0 +1,982 @@
+/* Header Styles */
+.header {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    padding: 0 20px; /* Padding for space inside the header */
+    border-bottom: 1px solid black;
+    position: relative; /* Needed for absolute positioning of profile container */
+}
+
+.header {
+    width: 90%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center; /* Vertically center the logo image */
+    margin-right: 20px; /* Space between logo and navigation */
+}
+
+.header-logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.header-navigation {
+    margin-left: 2px; /* Small space between logo and navigation text */
+    flex-grow: 1; /* Allow navigation to take up remaining space */
+    white-space: nowrap; /* Keep text in a single line */
+    overflow: hidden; /* Hide overflow text if needed */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.header-navigation h2 {
+    color: darkslateblue; /* Sets the text color to dark slate blue */
+    margin-bottom: 1em; /* Adds space below the heading */
+}
+
+
+/* Profile Dropdown Styles */
+.profile-container {
+    position: absolute; /* Positioned relative to .header */
+    top: 20px;
+    right: 20px;
+}
+
+.profile-dropdown {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 5px 15px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-dropdown img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-dropdown select {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    appearance: none;
+    padding-right: 10px;
+}
+
+.profile-dropdown select:focus {
+    outline: none;
+}
+
+.profile-dropdown::after {
+    content: '▼';
+    font-size: 12px;
+    color: #666;
+    margin-left: 5px;
+}
+
+/* Login Container Styles */
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    width: 450px;
+    margin: 20px auto; /* Center and space out from top */
+    text-align: center;
+}
+
+.login-container label,
+.login-container input,
+.login-container button {
+    display: block;
+    width: 95%; /* Full width inputs and buttons */
+    margin: 10px auto; /* Center align with margin */
+}
+
+.login-container input {
+    padding: 10px;
+}
+
+.login-container button {
+    height: 60px;
+    border-radius: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #218838;
+}
+
+/* Hide elements if needed */
+/* .main {
+    display: none;
+} */
+
+.main {
+    width: 90%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.horizontal-tabs {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+
+
+
+.horizontal-tabs a {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    height: 48px;
+    padding: 0 0.25rem;
+    font-weight: 500;
+    font-size: large;
+    color: inherit;
+    border-bottom: 3px solid transparent;
+    text-decoration: none;
+    transition: 0.15s ease;
+}
+
+.horizontal-tabs a:hover,
+.horizontal-tabs a:focus,
+.horizontal-tabs a.active {
+    color: blue;
+    border-bottom-color: black;
+}
+
+.horizontal-tabs a + * {
+    margin-left: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.content-main {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+
+#new-bill{
+    border: 2px solid red;
+}
+
+#customerbill{
+    border: 4px solid blue;
+}
+/* Parent container to hold both #new-bill and #customerbill */
+#bill-section {
+    display: flex;
+    justify-content: space-between; /* Space between the two containers */
+    gap: 20px; /* Space between them */
+    margin: 20px;
+}
+
+/* New bill and customer bill containers */
+#new-bill, #customerbill {
+    flex: 1; /* Both containers will take equal width */
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc; /* Optional: Add borders for both sections */
+    min-width: 300px; /* Ensure a minimum width so they don't get too small */
+}
+
+    #new-bill, #customerbill {
+        width: 100%; /* Full width when stacked vertically */
+        margin-bottom: 20px; /* Add space between them when stacked */
+    }
+
+
+    .form-column2 {
+        border: 2px solid grey;
+        margin-top: 40px;
+        height: 700px;
+        padding: 20px; /* Add padding inside the div for better layout */
+        box-sizing: border-box; /* Ensure padding and border are included in the width */
+        overflow-y: auto; /* Allow vertical scrolling if content exceeds the height */
+    }
+    
+    .form-column2 h2{
+        margin-left: 10px;
+    }
+
+    #order-overview table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 16px;
+        text-align: left;
+    }
+    
+    #order-overview th, #order-overview td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    
+    #order-overview th {
+        background-color: #f2f2f2;
+        color: black;
+    }
+
+
+    #worker-overview table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    #worker-overview th, #worker-overview td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #worker-overview th {
+        background-color: #f2f2f2;
+        color: black;
+    }
+
+    #worker-overview tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    #worker-overview tr:hover {
+        background-color: #ddd;
+    }
+
+    #worker-overview th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    /* Additional styling for buttons and forms */
+    #workers button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+   #workers button:hover {
+        background-color: #45a049;
+    }
+
+    #add-worker-form, #remove-worker-form {
+        margin-top: 20px;
+        /* display: none; */
+    }
+/* 
+      input[type="text"], select {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    } */
+
+    #workers input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #workers  input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    
+
+
+    #shop-expenses table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    #shop-expenses th, #shop-expenses td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #shop-expenses th {
+        background-color: #f2f2f2;
+        color: black;
+    }
+
+    #shop-expenses-form {
+        margin: 20px 0;
+        padding: 20px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+    }
+
+    #shop-expenses-form form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #shop-expenses-form label {
+        margin: 5px 0;
+    }
+
+    #shop-expenses-form input {
+        padding: 5px;
+        margin: 5px 0 15px 0;
+    }
+
+    #shop-expenses-form button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    #shop-expenses-form button:hover {
+        background-color: #45a049;
+    }
+
+    #toggle-form-btn {
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #45a049;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    #toggle-form-btn:hover {
+        background-color: #45a049;
+    }
+
+    /* css for costumer info section */
+    #customer-info{
+        width: auto;
+    }
+
+
+    #customer-info-form{
+        display: flex;
+    }
+    
+    #customer-info-form label{
+        margin-top: 9px;
+        margin-right: 11px;
+    }
+    
+    #customer-info-form button{
+        margin-left: 7px; 
+        /* width: 15px;  */
+        border-radius: 8px;
+        background-color: bisque;
+    
+    }
+
+    .search {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 340px;
+    }
+    
+    .search input {
+        font: inherit;
+        color: inherit;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1em 0 36px;
+        height: 40px;
+        border-radius: 8px;
+        border: 2px solid var(--c-border-primary);
+        color: var(--c-text-action);
+        font-size: 0.875rem;
+        transition: 0.15s ease;
+        width: 100%;
+        line-height: 1;
+    }
+    
+    .search input::placeholder {
+        color: var(--c-text-action);
+    }
+    
+    .search input:focus,
+    .search input:hover {
+        border-color: var(--c-accent-primary);
+    }
+    
+    .search button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        background-color: transparent;
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.25em;
+        color: var(--c-text-action);
+        padding: 0;
+        height: 40px;
+    }
+
+
+    #customer-info table {
+        width: auto;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 16px;
+        text-align: left;
+    }
+    
+    #customer-info th, #customer-info td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    
+    #customer-info th {
+        background-color: #f2f2f2;
+        color: black;
+    }
+
+    #customer-info body {
+        width:auto;
+    }
+
+    #weekly-pay-calculation label{
+
+        display: block;
+        margin-bottom: 10px;
+        color: #333;
+        font-weight: bold;
+}
+
+
+#worker-select-weekly {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#weekly-pay-calculation button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+
+#weekly-pay-calculation button:hover {
+    background-color: #0056b3;
+}
+
+
+#weekly-pay-result {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+#weekly-pay-result p {
+    margin: 10px 0;
+    font-size: larger;
+}
+
+
+
+#pant-section input{
+    /* margin: 6px; */
+    /* width: calc(100% - 20px); */
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+#pant-section label{
+    margin: 18px;
+}
+
+
+#shirt-section input{
+    /* margin: 6px; */
+    /* width: calc(100% - 20px); */
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+#shirt-section label{
+    margin: 17px;
+}
+
+.bill-logo img{
+    width: 100%;
+}
+
+
+
+
+/* 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+} */
+
+/* .form-column2 {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ddd;
+}
+
+#customerbill {
+    padding: 20px;
+    text-align: center;
+} */
+
+/* .bill-logo img {
+    width: 100px;
+    margin-bottom: 10px;
+} */
+/* 
+#customerbill h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+table.info-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+table.info-table td {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.info-table label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+table#customer-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table#customer-table th,
+table#customer-table td {
+    border: 1px solid #000;
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+table#customer-table th {
+    background-color: #514849db;
+    font-weight: bold;
+}
+
+table#customer-table td input[type="number"] {
+    width: 99%;
+    padding: 6px;
+}
+
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer strong {
+    color: #000;
+} */
+
+/* Styling for total row */
+/* .total-row td {
+    font-weight: bold;
+    background-color: #e0e0e0;
+}
+
+
+
+
+
+.suit-specialist {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+}
+
+.suit-specialist img {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.suit-specialist .highlight {
+    color: #ff6600;
+} */
+
+
+
+
+
+
+.form-column2 {
+    /* max-width: 900px; */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ddd;
+}
+
+#customerbill {
+    padding: 20px;
+    text-align: center;
+}
+
+#customerbill h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Flexbox container for the table and suit image */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Table styles */
+table.info-table {
+    width: 99%;
+    margin-bottom: 20px;
+}
+
+table.info-table td {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.info-table label {
+    font-size: 21px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#customer-table input[type="text"],
+#customer-table input[type="tel"],
+#customer-table input[type="date"],
+#customer-table input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+table#customer-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table#customer-table th,
+table#customer-table td {
+    border: 1px solid #000;
+    padding: 12px;
+    text-align: center;
+    font-size: 20px;
+}
+
+table#customer-table th {
+    font-size: 18px;
+    background-color: #514849db;
+    font-weight: bold;
+}
+
+table#customer-table td input[type="number"] {
+    width: 99%;
+    padding: 6px;
+}
+
+/* Styling for total row */
+.total-row td {
+    font-weight: bold;
+    background-color: #e0e0e0;
+}
+
+/* Suit Specialist styles */
+.suit-specialist {
+    margin-left: 20px;
+    width: 35%; /* Adjust width so it's beside the table */
+    text-align: center;
+}
+
+.suit-specialist img {
+    width: 100%; /* Image takes full width of the section */
+    /* max-width: 150px;  */
+    margin-bottom: 15px;
+}
+
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer strong {
+    color: #000;
+}
+
+
+#suit-specialist-heading{
+    border: 2px solid black ;
+    height: 50px;
+}
+
+
+/* #savePrintBtn{
+    margin-left: 536px;
+    margin-top: 14px;
+
+} */
+
+
+.centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.button {
+    background-color: #514849db; /* Updated background color */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Padding inside the button */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Animation for hover effect */
+}
+
+.button:hover {
+    background-color: #3e3a38db; /* Slightly darker shade on hover */
+}
+
+
+.form-column2{
+    height: 100%;
+}
+
+
+.info-table input[type="text"],
+.info-table input[type="tel"],
+.info-table input[type="date"],
+.info-table input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+
+/* Container for Detailed Overview */
+#detailed-overview {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Detailed Overview Title */
+#detailed-overview h3 {
+    font-size: 24px;
+    color: #514849e6;
+    margin-bottom: 20px;
+}
+
+/* Worker Dropdown Label */
+#detailed-overview label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #514849e6;
+}
+
+/* Worker Dropdown Styling */
+#worker-select-detailed {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    color: #514849e6;
+}
+
+#worker-select-detailed:focus {
+    outline: none;
+    border-color: #514849e6;
+    box-shadow: 0 0 5px rgba(81, 72, 73, 0.5);
+}
+
+/* Orders Table */
+#orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: left;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures table border-radius */
+}
+
+/* Table Header Styling */
+#orders-table thead th {
+    background-color: #514849e6;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border: none;
+}
+
+/* Table Body Row Styling */
+#orders-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#orders-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#orders-table tbody tr:hover {
+    background-color: #efefef;
+}
+
+/* Table Cells */
+#orders-table th, #orders-table td {
+    padding: 12px;
+    border: none;
+    color: #514849;
+}
+
+/* Placeholder for No Orders Found */
+#orders-table tbody td[colspan] {
+    text-align: center;
+    color: #999;
+}
+
+/* General Button Styles */
+button {
+    background-color: #514849e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #413838e6;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(81, 72, 73, 0.5);
+}
+
