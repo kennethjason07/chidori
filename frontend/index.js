@@ -621,7 +621,70 @@ document.getElementById('worker-form').addEventListener('submit', function (even
 
 
 // Function to fetch and display workers
-function fetchWorkers() {
+// function fetchWorkers() {
+//     fetch('http://127.0.0.1:5000/api/workers')
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log('Fetched data:', data); // Log the data for debugging
+//             const workersContainer = document.getElementById('worker-overview');
+//             workersContainer.innerHTML = ''; // Clear previous content
+
+//             if (data && data.length > 0) {
+//                 // Create a table to display the workers
+//                 let table = `<table>
+//                     <thead>
+//                         <tr>
+//                             <th>Serial No.</th>
+//                             <th>ID</th>
+//                             <th>Name</th>
+//                             <th>Number</th>
+//                             <th>Rate</th>
+//                             <th>Suit</th>
+//                             <th>Jacket</th>
+//                             <th>Sadri</th>
+//                             <th>Others</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody>`;
+
+//                 // Loop through each worker
+//                 data.forEach((worker, index) => {
+//                     const serialNumber = index + 1; // Incremental serial number for each worker
+//                     table += `<tr>
+//                         <td>${serialNumber}</td> <!-- Serial Number Column -->
+//                         <td>${worker.id}</td>
+//                         <td>${worker.name}</td>
+//                         <td>${worker.number}</td>
+//                         <td>${worker.Rate}</td>
+//                         <td>${worker.Suit}</td>
+//                         <td>${worker.Jacket}</td>
+//                         <td>${worker.Sadri}</td>
+//                         <td>${worker.Others}</td>
+//                     </tr>`;
+//                 });
+
+//                 table += '</tbody></table>';
+//                 workersContainer.innerHTML += table;
+//             } else {
+//                 workersContainer.innerHTML = '<p>No workers found.</p>';
+//             }
+//         })
+//         .catch(error => {
+//             console.error('Error fetching workers:', error);
+//             workersContainer.innerHTML = '<p>Error fetching workers.</p>';
+//         });
+
+        
+// }
+
+
+
+// this is a function written by me
+
+
+// Function to fetch and display workers data in a table
+
+function ken() {
     fetch('http://127.0.0.1:5000/api/workers')
         .then(response => response.json())
         .then(data => {
@@ -647,19 +710,19 @@ function fetchWorkers() {
                     </thead>
                     <tbody>`;
 
-                // Loop through each worker
+                // Loop through each worker and populate table rows
                 data.forEach((worker, index) => {
                     const serialNumber = index + 1; // Incremental serial number for each worker
                     table += `<tr>
-                        <td>${serialNumber}</td> <!-- Serial Number Column -->
+                        <td>${serialNumber}</td>
                         <td>${worker.id}</td>
                         <td>${worker.name}</td>
                         <td>${worker.number}</td>
-                        <td>${worker.Rate}</td>
-                        <td>${worker.Suit}</td>
-                        <td>${worker.Jacket}</td>
-                        <td>${worker.Sadri}</td>
-                        <td>${worker.Others}</td>
+                        <td>${worker.Rate || "N/A"}</td>
+                        <td>${worker.Suit || "N/A"}</td>
+                        <td>${worker.Jacket || "N/A"}</td>
+                        <td>${worker.Sadri || "N/A"}</td>
+                        <td>${worker.Others || "N/A"}</td>
                     </tr>`;
                 });
 
@@ -671,9 +734,15 @@ function fetchWorkers() {
         })
         .catch(error => {
             console.error('Error fetching workers:', error);
+            const workersContainer = document.getElementById('worker-overview');
             workersContainer.innerHTML = '<p>Error fetching workers.</p>';
         });
 }
+
+// Call the ken function to display the workers table
+ken();
+
+
 
 // Function to populate worker dropdown for removal
 function populateWorkerDropdown() {
@@ -1147,6 +1216,9 @@ function displayWeeklyPayResult(data) {
 
 
 // Function to populate the worker dropdown
+
+// fjhakjshkfjdsahjfkhkjdshfjksdhfjkhdfjkhskdjfhjdkhfjkdhjhfjhjfoweoivnvnknsnoweooieuioruriioeiouroiuroiueioroieuroieueoiufjkndkl
+
 function fetchWorkers() {
     fetch('http://127.0.0.1:5000/api/workers')
         .then(response => response.json())
